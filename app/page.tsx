@@ -91,94 +91,154 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* TECHNICAL SKILLS */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-semibold mb-10 text-center">
+        {/* TECHNICAL EXPERTISE */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-12 text-center">
             Technical Expertise
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Mobile Development",
-                items: [
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Mobile Engineering */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative group bg-gradient-to-br from-[#111827] to-black 
+                 p-8 rounded-3xl border border-gray-800 overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 bg-blue-500 opacity-0 
+                      group-hover:opacity-10 blur-2xl transition duration-500"
+              />
+
+              <h3 className="text-xl font-semibold mb-6 text-blue-400">
+                Mobile Engineering
+              </h3>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
                   "React Native (iOS & Android)",
+                  "TypeScript",
                   "Native Modules",
-                  "Push Notifications",
                   "React Navigation",
-                ],
-              },
-              {
-                title: "State & APIs",
-                items: [
+                  "Push Notifications",
+                  "App Store Deployment",
+                ].map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-white/5 border border-gray-700 
+                       rounded-full hover:border-blue-400 transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* State & Architecture */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative group bg-gradient-to-br from-[#1f2937] to-black 
+                 p-8 rounded-3xl border border-gray-800 overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 bg-purple-500 opacity-0 
+                      group-hover:opacity-10 blur-2xl transition duration-500"
+              />
+
+              <h3 className="text-xl font-semibold mb-6 text-purple-400">
+                State Management & Architecture
+              </h3>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
                   "Redux Toolkit",
                   "Redux-Saga",
                   "RTK Query",
-                  "REST APIs",
-                  "Firebase",
-                ],
-              },
-              {
-                title: "Optimization & Testing",
-                items: [
+                  "SOLID Principles",
+                  "Agile / Scrum",
+                  "CI/CD (GitHub Actions, Fastlane)",
+                ].map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-white/5 border border-gray-700 
+                       rounded-full hover:border-purple-400 transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Backend & Data */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative group bg-gradient-to-br from-[#0f172a] to-black 
+                 p-8 rounded-3xl border border-gray-800 overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 bg-green-500 opacity-0 
+                      group-hover:opacity-10 blur-2xl transition duration-500"
+              />
+
+              <h3 className="text-xl font-semibold mb-6 text-green-400">
+                Backend & Data Integration
+              </h3>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
+                  "RESTful APIs",
+                  "Firebase (OAuth & Cloud Messaging)",
+                  "SQLite",
+                  "AsyncStorage",
+                  "Stripe Integration",
+                  "Twilio Integration",
+                ].map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-white/5 border border-gray-700 
+                       rounded-full hover:border-green-400 transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Optimization & Quality */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative group bg-gradient-to-br from-[#111827] to-black 
+                 p-8 rounded-3xl border border-gray-800 overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 bg-pink-500 opacity-0 
+                      group-hover:opacity-10 blur-2xl transition duration-500"
+              />
+
+              <h3 className="text-xl font-semibold mb-6 text-pink-400">
+                Optimization & Quality
+              </h3>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
                   "Performance Tuning",
                   "Memory Leak Debugging",
                   "Jest",
                   "Unit & Integration Testing",
-                ],
-              },
-            ].map((section, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/5 backdrop-blur-md border border-gray-800 p-6 rounded-2xl shadow-xl"
-              >
-                <h3 className="text-xl font-semibold mb-4">{section.title}</h3>
-                <ul className="space-y-2 text-gray-400">
-                  {section.items.map((item, i) => (
-                    <li key={i}>• {item}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                  "Code Reviews",
+                  "Responsive UI Design",
+                ].map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-white/5 border border-gray-700 
+                       rounded-full hover:border-pink-400 transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </motion.section>
-
-        {/* EXPERIENCE */}
-        {/* <section>
-          <h2 className="text-3xl font-semibold mb-10 text-center">
-            Professional Experience
-          </h2>
-
-          <div className="space-y-10">
-            <div className="bg-gradient-to-r from-[#111827] to-[#1f2937] p-8 rounded-3xl border border-gray-800">
-              <h3 className="text-xl font-semibold">
-                Senior React Native Developer – Chetu INC
-              </h3>
-              <p className="text-gray-400 mt-2">
-                Improved application performance by 30% and reduced load time by
-                25%. Implemented Redux Toolkit architecture reducing API
-                handling issues by 40%.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-r from-[#111827] to-[#1f2937] p-8 rounded-3xl border border-gray-800">
-              <h3 className="text-xl font-semibold">
-                React Native Developer – Recraft Relic Pvt Ltd
-              </h3>
-              <p className="text-gray-400 mt-2">
-                Integrated Stripe, Twilio, and Firebase APIs, increasing
-                engagement by 20%. Resolved 100+ production bugs improving
-                stability and crash rates.
-              </p>
-            </div>
-          </div>
-        </section> */}
+        </section>
 
         {/* PROFESSIONAL EXPERIENCE */}
         <section>
