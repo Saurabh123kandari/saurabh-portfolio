@@ -73,7 +73,7 @@ export default function Home() {
                 Download Resume
               </a> */}
               <a
-                href="https://github.com/YOUR_USERNAME"
+                href="https://github.com/Saurabh123kandari"
                 target="_blank"
                 className="px-6 py-3 rounded-xl border border-gray-600 hover:bg-gray-800 transition"
               >
@@ -81,7 +81,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://linkedin.com/in/YOUR_LINKEDIN"
+                href="https://www.linkedin.com/in/saurabh-kandari-862a68161"
                 target="_blank"
                 className="px-6 py-3 rounded-xl border border-gray-600 hover:bg-gray-800 transition"
               >
