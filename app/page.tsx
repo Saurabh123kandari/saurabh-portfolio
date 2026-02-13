@@ -1,129 +1,171 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0f0f0f] text-white px-6 py-16">
-      <div className="max-w-6xl mx-auto space-y-24">
+    <main className="min-h-screen bg-gradient-to-b from-black via-[#0f172a] to-black text-white px-6 py-16">
+      <div className="max-w-6xl mx-auto space-y-28">
 
         {/* HERO SECTION */}
-        <section className="space-y-6">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6 text-center"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold">
             Saurabh Kandari
           </h1>
 
-          <p className="text-xl text-gray-400">
-            Senior React Native Developer • 4 Years Experience
+          <p className="text-xl text-gray-300">
+            Senior React Native Developer • 4+ Years Experience
           </p>
 
-          <p className="text-gray-500 max-w-2xl">
-            Building scalable, high-performance mobile applications using 
-            React Native CLI, TypeScript, and native integrations. 
-            Specialized in performance optimization, offline-first architecture, 
-            and real-time features.
+          <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Results-driven React Native engineer specializing in high-performance 
+            cross-platform mobile applications. Strong expertise in Redux Toolkit, 
+            API integrations, performance optimization, and production deployments 
+            across iOS & Android ecosystems.
           </p>
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex justify-center gap-4 pt-6">
             <Link
-              href="https://github.com/YOUR_USERNAME"
+              href="https://github.com/Saurabh123kandari"
               target="_blank"
-              className="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-80 transition"
+              className="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:scale-105 transition"
             >
               GitHub
             </Link>
 
             <Link
-              href="https://linkedin.com/in/YOUR_LINKEDIN"
+              href="https://www.linkedin.com/in/saurabh-kandari-862a68161"
               target="_blank"
               className="px-6 py-3 rounded-xl border border-gray-600 hover:bg-gray-800 transition"
             >
               LinkedIn
             </Link>
           </div>
+        </motion.section>
+
+        {/* TECHNICAL SKILLS */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-semibold mb-10 text-center">
+            Technical Expertise
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Mobile Development",
+                items: ["React Native (iOS & Android)", "Native Modules", "Push Notifications", "React Navigation"]
+              },
+              {
+                title: "State & APIs",
+                items: ["Redux Toolkit", "Redux-Saga", "RTK Query", "REST APIs", "Firebase"]
+              },
+              {
+                title: "Optimization & Testing",
+                items: ["Performance Tuning", "Memory Leak Debugging", "Jest", "Unit & Integration Testing"]
+              }
+            ].map((section, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/5 backdrop-blur-md border border-gray-800 p-6 rounded-2xl shadow-xl"
+              >
+                <h3 className="text-xl font-semibold mb-4">{section.title}</h3>
+                <ul className="space-y-2 text-gray-400">
+                  {section.items.map((item, i) => (
+                    <li key={i}>• {item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* EXPERIENCE */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-10 text-center">
+            Professional Experience
+          </h2>
+
+          <div className="space-y-10">
+
+            <div className="bg-gradient-to-r from-[#111827] to-[#1f2937] p-8 rounded-3xl border border-gray-800">
+              <h3 className="text-xl font-semibold">
+                Senior React Native Developer – Chetu INC
+              </h3>
+              <p className="text-gray-400 mt-2">
+                Improved application performance by 30% and reduced load time by 25%.
+                Implemented Redux Toolkit architecture reducing API handling issues by 40%.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#111827] to-[#1f2937] p-8 rounded-3xl border border-gray-800">
+              <h3 className="text-xl font-semibold">
+                React Native Developer – Recraft Relic Pvt Ltd
+              </h3>
+              <p className="text-gray-400 mt-2">
+                Integrated Stripe, Twilio, and Firebase APIs, increasing engagement by 20%.
+                Resolved 100+ production bugs improving stability and crash rates.
+              </p>
+            </div>
+
+          </div>
         </section>
 
-        {/* SKILLS SECTION */}
+        {/* PROJECTS */}
         <section>
-          <h2 className="text-3xl font-semibold mb-8">Technical Expertise</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center">
+            Featured Projects
+          </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            <div className="bg-[#1a1a1a] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition">
-              <h3 className="text-xl font-semibold mb-4">Mobile Development</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>React Native CLI</li>
-                <li>TypeScript</li>
-                <li>Redux / Zustand</li>
-                <li>Navigation & Deep Linking</li>
-              </ul>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition">
-              <h3 className="text-xl font-semibold mb-4">Architecture & Data</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>SQLite (Offline-first)</li>
-                <li>REST APIs</li>
-                <li>Firebase</li>
-                <li>Environment Config (UAT / Prod)</li>
-              </ul>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition">
-              <h3 className="text-xl font-semibold mb-4">Advanced Capabilities</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>Twilio Video Integration</li>
-                <li>Push Notifications</li>
-                <li>Performance Optimization</li>
-                <li>Memory Management</li>
-              </ul>
-            </div>
+            {[
+              {
+                name: "Health Care App",
+                tech: "React Native • Redux • Firebase • Twilio",
+                desc: "Engineered Medicare platform achieving 30% revenue growth in 3 months."
+              },
+              {
+                name: "RV’s E-Commerce",
+                tech: "React Native • Stripe • REST APIs",
+                desc: "Built scalable shopping and payment gateway integration."
+              },
+              {
+                name: "Cuperos Dating App",
+                tech: "React Native • Firebase • Redux",
+                desc: "Developed social media features including messaging & notifications."
+              }
+            ].map((project, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="bg-black border border-gray-800 p-6 rounded-2xl shadow-xl"
+              >
+                <h3 className="text-lg font-semibold">{project.name}</h3>
+                <p className="text-sm text-gray-400 mt-2">{project.tech}</p>
+                <p className="text-gray-500 mt-3">{project.desc}</p>
+              </motion.div>
+            ))}
 
           </div>
         </section>
 
-        {/* PROJECT SECTION */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-8">Featured Project</h2>
-
-          <div className="bg-gradient-to-br from-[#1f1f1f] to-[#111111] p-8 rounded-3xl border border-gray-800 hover:border-gray-600 transition">
-            <h3 className="text-2xl font-semibold mb-4">NextSkill – E-Learning App</h3>
-
-            <p className="text-gray-400 max-w-3xl leading-relaxed">
-              Designed and developed a scalable mobile learning platform using 
-              React Native CLI with SQLite-based offline storage and video 
-              integration. Implemented optimized FlatList rendering, 
-              efficient image caching, and environment-based configuration 
-              for seamless UAT and production deployments.
-            </p>
-
-            <div className="flex gap-4 mt-6">
-              <span className="px-4 py-2 bg-black border border-gray-700 rounded-xl text-sm">
-                React Native
-              </span>
-              <span className="px-4 py-2 bg-black border border-gray-700 rounded-xl text-sm">
-                SQLite
-              </span>
-              <span className="px-4 py-2 bg-black border border-gray-700 rounded-xl text-sm">
-                Twilio
-              </span>
-              <span className="px-4 py-2 bg-black border border-gray-700 rounded-xl text-sm">
-                TypeScript
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* CONTACT SECTION */}
-        <section className="border-t border-gray-800 pt-12">
-          <h2 className="text-3xl font-semibold mb-6">Let’s Connect</h2>
-
-          <p className="text-gray-400">
-            Open to senior React Native opportunities and challenging 
-            mobile engineering roles.
-          </p>
-
-          <p className="mt-4 text-white font-medium">
-            your-email@gmail.com
-          </p>
+        {/* CONTACT */}
+        <section className="text-center border-t border-gray-800 pt-12">
+          <h2 className="text-3xl font-semibold mb-4">Let’s Connect</h2>
+          <p className="text-gray-400">Open to Senior React Native opportunities</p>
+          <p className="mt-4 font-medium">saurabh.kandari@gmail.com</p>
         </section>
 
       </div>
